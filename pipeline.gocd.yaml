@@ -42,7 +42,7 @@ pipelines:
                     arguments:
                     - package
   demo_pipeline_2:
-    group: defaultGroup
+    group: Deployment
     materials:
       backend:
         git: https://github.com/arthisiva451/gocd-pipeline.git
