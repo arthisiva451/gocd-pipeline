@@ -1,0 +1,84 @@
+format_version: 2
+pipelines:
+  demo_pipeline:
+    group: Deployment
+    materials:
+      backend:
+        git: https://github.com/arthisiva451/gocd-pipeline.git
+        branch: master
+    stages:
+      - Demo_Project_Stage_1:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 1"
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 2"
+                    arguments:
+                    - package
+      - Demo_Project_Stage_2:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 1"
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 2"
+                    arguments:
+                    - package
+  demo_pipeline_2:
+    group: defaultGroup
+    materials:
+      backend:
+        git: https://github.com/arthisiva451/gocd-pipeline.git
+        branch: master
+    stages:
+      - Demo_Project_Stage_1:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 1"
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 2"
+                    arguments:
+                    - package
+      - Demo_Project_Stage_2:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 1"
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Building task 2"
+                    arguments:
+                    - package   
