@@ -1,0 +1,88 @@
+format_version: 2
+pipelines:
+  - name: demo_pipeline
+  demo_pipeline:
+    group: defaultGroup
+    materials:
+      backend:
+        git: https://github.com/arthisiva451/gocd-pipeline.git
+        branch: main
+    stages:
+      - Demo_Project_Stage_1
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo "Running tests for Demo_Project_Stage_1"
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package
+           artifacts:
+          - source: output/
+            destination: pipe1_output/
+      - Demo_Project_Stage_2:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package
+  demo_pipeline_2:
+    group: defaultGroup
+    materials:
+      backend:
+        git: https://github.com/arthisiva451/gocd-pipeline.git
+        branch: main
+    stages:
+      - Demo_Project_Stage_1:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package
+      - Demo_Project_Stage_2:
+          clean_workspace: true
+          jobs:
+            build_task_1:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package
+            build_task_2:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: ls
+                    arguments:
+                    - package   
