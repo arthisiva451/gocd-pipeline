@@ -25,9 +25,6 @@ pipelines:
                     command: ls
                     arguments:
                     - package
-           artifacts:
-          - source: output/
-            destination: pipe1_output/
       - Demo_Project_Stage_2:
           clean_workspace: true
           jobs:
