@@ -7,7 +7,7 @@
       - name: pipe1
         label_template: '${COUNT}'
         materials:
-          - git: https://github.com/my-repo.git
+          - git: https://github.com/arthisiva451/gocd-pipeline.git
             branch: main
         stages:
           - name: build
@@ -34,7 +34,7 @@
       - name: pipe2
         label_template: '${COUNT}'
         materials:
-          - git: https://github.com/my-repo.git
+          - git:https://github.com/arthisiva451/gocd-pipeline.git
             branch: main
           # Define dependency on pipe1
           - pipeline: pipe1
